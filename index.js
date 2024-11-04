@@ -23,7 +23,6 @@ server.use(cors(corsOptions));
 server.use(express.json());
 
 server.use("/auth", require("./routes/auth"));
-server.use("/categories", require("./routes/category"));
 server.use("/books", require("./routes/book"));
 server.use("/cart", cartRoute);
 server.use("/transaction", transactionRoute);
