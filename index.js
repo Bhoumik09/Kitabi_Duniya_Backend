@@ -8,7 +8,7 @@ let cartRoute = require("./routes/cart.js");
 let transactionRoute = require("./routes/transaction.js");
 const Book = require("./models/book.js");
 const corsOptions = {
-  origin: ["http://localhost:5173", "https://kitabi-duniya-backend.vercel.app"], // List allowed origins
+  origin: ["https://kitabi-duniya-backend.vercel.app",'https://kitabi-world-tq1p.vercel.app'], // List allowed origins
   credentials: true, // Allow cookies or authorization headers with requests
 };
 server.use(cors(corsOptions));
