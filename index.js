@@ -8,13 +8,15 @@ let cartRoute = require("./routes/cart.js");
 let transactionRoute = require("./routes/transaction.js");
 const Book = require("./models/book.js");
 const corsOptions = {
-  origin: "http://localhost:5173", // Allow requests only from this origin
-  credentials: true, // Allow cookies to be sent with requests
+  origin: ["http://localhost:5173", "https://kitabi-duniya-backend.vercel.app"], // List allowed origins
+  credentials: true, // Allow cookies or authorization headers with requests
 };
+server.use(cors(corsOptions));
+
 
 // Example Node.js/Express code
 
-server.use(cors(corsOptions));
+
 server.use(express.json());
 
 server.use("/auth", require("./routes/auth"));
