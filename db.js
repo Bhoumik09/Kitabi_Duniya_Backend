@@ -7,6 +7,7 @@ const connectionParams = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 };
+
 const connectToMongo = async () => {
   try {
     await mongoose.connect(mongoURL, connectionParams);
