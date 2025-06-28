@@ -21,6 +21,7 @@ router.post(
 
     //if error return bad request
     const errors = validationResult(req);
+    console.log(errors);
     if (!errors.isEmpty()) {
       return res.status(400).json({ success, errors: errors.array() });
     }
@@ -28,7 +29,7 @@ router.post(
       const { username, email, password, is_admin = false } = req.body;
 
       const existingUsername = await Account.findOne({ username });
-
+      
       if (existingUsername) {
         return res
           .status(400)
